@@ -120,13 +120,135 @@ Merge:
 * Select a pivot, partition the array such that elements less than pivot are on left, greater on right, then recursively sort them.
 * Highly efficient for average cases.
 
-### Example
+### Example - Recursive Passes and Partitions
 
-Unsorted: `[29, 10, 14, 37, 14]`, Pivot = 14
+```c
+Initial Array: [35, 33, 42, 10, 14, 19, 27, 44]
+```
 
-Partition → `[10, 14, 14] [29, 37]`
+Consider the **last element as the pivot**.
 
-Sorted result: `[10, 14, 14, 29, 37]`
+
+#### ▶️ **Initial Call**: `quick_sort(arr, 0, 7)`
+
+**Array**: `[35, 33, 42, 10, 14, 19, 27, 44]`
+**Pivot** = 44
+
+* All elements are `< 44` → No swaps until final pivot placement
+* **Swap 44 with itself**
+  ✅ Array after pass: `[35, 33, 42, 10, 14, 19, 27, 44]`
+  ✅ Pivot placed at index **7**
+
+**Next recursive calls**:
+
+* `quick_sort(arr, 0, 6)`
+* `quick_sort(arr, 8, 7)` ← skipped (base case)
+
+
+#### ▶️ **Recursive Call**: `quick_sort(arr, 0, 6)`
+
+**Array**: `[35, 33, 42, 10, 14, 19, 27]`
+**Pivot** = 27
+
+##### Partitioning:
+
+| Index | Value | Compare w/ Pivot (27) | Swap With    |
+| ----- | ----- | --------------------- | ------------ |
+| 0     | 35    | >                     | -            |
+| 1     | 33    | >                     | -            |
+| 2     | 42    | >                     | -            |
+| 3     | 10    | <                     | Swap with 35 |
+| 4     | 14    | <                     | Swap with 33 |
+| 5     | 19    | <                     | Swap with 42 |
+
+* i = 2 → Swap pivot (27) with arr\[3]
+
+✅ Array after pass: `[10, 14, 19, 27, 33, 42, 35, 44]`
+✅ Pivot placed at index **3**
+
+**Next recursive calls**:
+
+* `quick_sort(arr, 0, 2)`
+* `quick_sort(arr, 4, 6)`
+
+
+#### ▶️ **Recursive Call**: `quick_sort(arr, 0, 2)`
+
+**Array**: `[10, 14, 19]`
+**Pivot** = 19
+
+* All elements < pivot → Final swap with itself
+  ✅ Array unchanged: `[10, 14, 19]`
+  ✅ Pivot at index **2**
+
+**Next recursive calls**:
+
+* `quick_sort(arr, 0, 1)`
+* `quick_sort(arr, 3, 2)` ← skipped
+
+
+#### ▶️ **Recursive Call**: `quick_sort(arr, 0, 1)`
+
+**Array**: `[10, 14]`
+**Pivot** = 14
+
+* 10 < 14 → No swap, then pivot swaps with itself
+  ✅ `[10, 14]`
+  ✅ Pivot at index **1**
+
+**Both recursive calls** on (0,0) and (2,1) → base cases
+
+
+#### ▶️ **Recursive Call**: `quick_sort(arr, 4, 6)`
+
+**Array**: `[33, 42, 35]`
+**Pivot** = 35
+
+| Index | Value | Compare w/ 35 | Swap    |
+| ----- | ----- | ------------- | ------- |
+| 4     | 33    | <             | No swap |
+| 5     | 42    | >             | No swap |
+
+* i = 4 → Swap pivot (35) with arr\[5]
+
+✅ Array becomes: `[10, 14, 19, 27, 33, 35, 42, 44]`
+✅ Pivot at index **5**
+
+**Next recursive calls**:
+
+* `quick_sort(arr, 4, 4)` ← base case
+* `quick_sort(arr, 6, 6)` ← base case
+
+
+#### Final Sorted Array:
+
+```c
+[10, 14, 19, 27, 33, 35, 42, 44]
+```
+
+---
+
+## 🔍 Summary of Recursive Calls
+
+| Call Range | Pivot | Resulting Subarray |
+| ---------- | ----- | ------------------ |
+| (0, 7)     | 44    | Pivot at 7         |
+| (0, 6)     | 27    | Pivot at 3         |
+| (0, 2)     | 19    | Pivot at 2         |
+| (0, 1)     | 14    | Pivot at 1         |
+| (4, 6)     | 35    | Pivot at 5         |
+
+---
+
+### Summary
+
+* Quick Sort is **efficient** and performs **in-place sorting**.
+* Depth of recursion depends on pivot selection.
+* Time Complexity:
+
+  * Best/Average: **O(n log n)**
+  * Worst: **O(n²)** (when partition is highly unbalanced)
+
 
 ---
 
