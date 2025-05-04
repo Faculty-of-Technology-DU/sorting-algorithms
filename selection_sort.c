@@ -4,11 +4,16 @@
 
 int selection_sort(int arr[], int size) {
 
-    for (int i = 0; i < size - 1; i++) {
+    // Best Case - O(n^2)
+    // Worst Case - O(n^2)
+
+    // even if you have an already sorted sequence
+
+    for (int i = 0; i < size - 1; i++) { // size = n,
 
         int min_index = i;
 
-        for (int j = i + 1; j < size; j++) {
+        for (int j = i + 1; j < size; j++) { // n
 
             if (arr[j] < arr[min_index]) {
                 min_index = j;
@@ -16,6 +21,8 @@ int selection_sort(int arr[], int size) {
 
         }
 
+        // Swapping of minimum element with the first index of the 
+        // unsorted portion of the array
         int temp = arr[i];
         arr[i] = arr[min_index];
         arr[min_index] = temp;

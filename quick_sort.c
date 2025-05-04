@@ -4,12 +4,21 @@
 int partition(int arr[], int low, int high) {
 
     int pivot = arr[high];
+    // Assuming the pivot to be the last element
+    
     int i = low - 1;
+    // Need the initial value of low index for swapping 
+    // elements lesser than pivot
 
     for (int j = low; j < high; j++) {
 
+        // Find the elements lesser than pivot
         if (arr[j] <= pivot) {
             i++;
+
+            // Swap the element with the element at index i
+            // to arrange the elements lesser than pivot
+            // to the left of it.
             int temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
@@ -17,6 +26,8 @@ int partition(int arr[], int low, int high) {
 
     }
 
+    // Swapping the pivot with the element currently 
+    // occupying the appropriate position of the pivot element
     int temp = arr[i + 1];
     arr[i + 1] = arr[high];
     arr[high] = temp;

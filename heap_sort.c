@@ -1,16 +1,25 @@
 #include <stdio.h>
 
 int heapify(int arr[], int n, int i) {
+
+    // min-heapification
     int smallest = i;
+
     int left = 2 * i + 1;
     int right = 2 * i + 2;
 
-    if (left < n && arr[left] < arr[smallest])
+    if (left < n && arr[left] < arr[smallest]) {
         smallest = left;
+    }
 
-    if (right < n && arr[right] < arr[smallest])
+    if (right < n && arr[right] < arr[smallest]) {
         smallest = right;
+    }
 
+    // Swap the parent's value with the smallest value
+    // (either from the lchild  or the rchild)
+    // only if the value of either of the children is 
+    // lesser than the value of the parent
     if (smallest != i) {
         int temp = arr[i];
         arr[i] = arr[smallest];
@@ -21,16 +30,15 @@ int heapify(int arr[], int n, int i) {
     return 0;
 }
 
+//         4
+//    10        3
+// 5      1
 
 int build_min_heap(int arr[], int n) {
-
-    for (int i = n/2 - 1; i >= 0; i--) {
+    for (int i = n/2 - 1; i >= 0; i--)
         heapify(arr, n, i);
-    }
-
     return 0;
 }
-
 
 int heap_sort_min(int arr[], int n) {
     build_min_heap(arr, n);
@@ -46,18 +54,17 @@ int heap_sort_min(int arr[], int n) {
     }
 
     // Reverse the array to get ascending order
-    for (int i = 0; i < n/2; i++) {
+    // Reversal only needed if you are dealing with min-heaps
+    for (int i = 0; i < n / 2; i++) {
         int temp = arr[i];
-        arr[i] = arr[n-1-i];
-        arr[n-1-i] = temp;
+        arr[i] = arr[n - 1 - i];
+        arr[n - 1 - i] = temp;
     }
 
     return 0;
 }
 
-
 int main() {
-    
     int arr[] = {4, 10, 3, 5, 1};
     int size = sizeof(arr) / sizeof(arr[0]);
 
@@ -66,7 +73,6 @@ int main() {
     for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
     }
-
     return 0;
 }
 
