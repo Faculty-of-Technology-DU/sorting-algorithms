@@ -21,12 +21,16 @@ int heapify(int arr[], int n, int i) {
     return 0;
 }
 
+
 int build_min_heap(int arr[], int n) {
+
     for (int i = n/2 - 1; i >= 0; i--) {
         heapify(arr, n, i);
     }
+
     return 0;
 }
+
 
 int heap_sort_min(int arr[], int n) {
     build_min_heap(arr, n);
@@ -51,7 +55,9 @@ int heap_sort_min(int arr[], int n) {
     return 0;
 }
 
+
 int main() {
+    
     int arr[] = {4, 10, 3, 5, 1};
     int size = sizeof(arr) / sizeof(arr[0]);
 
@@ -60,6 +66,7 @@ int main() {
     for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
     }
+
     return 0;
 }
 
