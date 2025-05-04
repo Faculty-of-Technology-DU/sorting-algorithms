@@ -261,3 +261,6 @@ Consider the **last element as the pivot**.
 | Bubble Sort    | O(n) / O(n²) / O(n²)                 | O(1)     | ✔      | ✔        |
 | Merge Sort     | O(n log n) / O(n log n) / O(n log n) | O(n)     | ✔      | ✖        |
 | Quick Sort     | O(n log n) / O(n log n) / O(n²)      | O(log n) | ✖      | ✖        |
+
+
+Also, study the concepts and codes of Binary Trees represented in arrays and Heap Sort covered in the class.
