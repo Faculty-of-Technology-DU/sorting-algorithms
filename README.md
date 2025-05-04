@@ -19,6 +19,8 @@ Unsorted Array: `[29, 10, 14, 37, 14]`
 | 3    | `[10, 14, 14, 37, 29]` | Swap 14 with 29 |
 | 4    | `[10, 14, 14, 29, 37]` | Swap 29 with 37 |
 
+
+
 ---
 
 ## **Insertion Sort**
@@ -52,15 +54,24 @@ Unsorted Array: `[29, 10, 14, 37, 14]`
 * Stable but inefficient for large lists.
 
 ### Example
-
 Unsorted Array: `[29, 10, 14, 37, 14]`
 
-| Pass | Array State            | Action            |
-| ---- | ---------------------- | ----------------- |
-| 1    | `[10, 14, 29, 14, 37]` | Swap 29↔10, 29↔14 |
-| 2    | `[10, 14, 14, 29, 37]` | Swap 29↔14        |
-| 3    | `[10, 14, 14, 29, 37]` | No changes        |
-| 4    | `[10, 14, 14, 29, 37]` | Sorted            |
+### Pass Table
+In each pass, adjacent elements are compared and **swapped if out of order**, pushing the largest unsorted element to the end. The process is repeated for the remaining unsorted portion.
+
+
+| Pass | Comparisons                        | Swaps Made          | Array After Pass       |
+| ---- | ---------------------------------- | ------------------- | ---------------------- |
+| 1    | (29>10), (29>14), (29<37), (37>14) | 29↔10, 29↔14, 37↔14 | `[10, 14, 29, 14, 37]` |
+| 2    | (10<14), (14<29), (29>14)          | 29↔14               | `[10, 14, 14, 29, 37]` |
+| 3    | (10<14), (14==14), (14<29)         | None                | `[10, 14, 14, 29, 37]` |
+| 4    | (10<14), (14==14)                  | None                | `[10, 14, 14, 29, 37]` |
+
+### Key Points
+
+* Bubble Sort performs **at most (n-1) passes**.
+* It can **terminate early** if no swaps are made in a pass (like in Pass 3 and 4 here).
+* Hence, it is an **adaptive** algorithm.
 
 ---
 
