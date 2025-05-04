@@ -228,7 +228,7 @@ Consider the **last element as the pivot**.
 
 ---
 
-## 🔍 Summary of Recursive Calls
+### Recursive Calls Summary
 
 | Call Range | Pivot | Resulting Subarray |
 | ---------- | ----- | ------------------ |
@@ -240,7 +240,7 @@ Consider the **last element as the pivot**.
 
 ---
 
-### Summary
+### Key Points
 
 * Quick Sort is **efficient** and performs **in-place sorting**.
 * Depth of recursion depends on pivot selection.
