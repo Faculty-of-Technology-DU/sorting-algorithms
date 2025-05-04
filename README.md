@@ -1,15 +1,17 @@
 # Notes on Sorting Algorithms
 
 ## Fundamental Concepts
-### What is a Stable Sorting Algorithm?
+### What is a _Stable Sortin_g Algorithm?
 A stable sorting algorithm is one that preserves the relative order of records with equal keys (i.e., values).
 
 In simple terms, if two elements A and B are equal and appear in that order in the original array, they will appear in the same order after sorting if the algorithm is stable.
 
-### What is an Adaptive Sorting Algorithm?
+### What is an _Adaptive Sortin_g Algorithm?
 An adaptive sorting algorithm is one that takes advantage of existing order in the input data and performs faster when the data is already (or nearly) sorted. 
 
 In simple terms, if the input is partially sorted, an adaptive sorting algorithm will sort it faster than its worst-case performance.
+
+---
 
 ## **Selection Sort**
 
