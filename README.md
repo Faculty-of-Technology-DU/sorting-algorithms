@@ -1,6 +1,6 @@
 # Notes on Sorting Algorithms
 
-## **1. Selection Sort**
+## **Selection Sort**
 
 ### Concept:
 
@@ -21,7 +21,7 @@ Unsorted Array: `[29, 10, 14, 37, 14]`
 
 ---
 
-## **2. Insertion Sort**
+## **Insertion Sort**
 
 ### Concept:
 
@@ -43,7 +43,7 @@ Unsorted Array: `[29, 10, 14, 37, 14]`
 
 ---
 
-## **3. Bubble Sort**
+## **Bubble Sort**
 
 ### Concept:
 
@@ -64,7 +64,7 @@ Unsorted Array: `[29, 10, 14, 37, 14]`
 
 ---
 
-## **4. Merge Sort**
+## **Merge Sort**
 
 ### Concept:
 
@@ -88,7 +88,7 @@ Merge:
 
 ---
 
-## **5. Quick Sort**
+## **Quick Sort**
 
 ### Concept:
 
