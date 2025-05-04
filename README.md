@@ -4,7 +4,7 @@
 
 ### Concept
 
-* Repeatedly selects the smallest (or largest) element from the unsorted portion and swaps it with the first unsorted element.
+* Repeatedly select the smallest (or largest) element from the unsorted portion and swap it with the first unsorted element.
 * Not adaptive and not stable.
 * Time Complexity: **O(n²)** (all cases), Space: **O(1)**
 
@@ -25,8 +25,8 @@ Unsorted Array: `[29, 10, 14, 37, 14]`
 
 ### Concept
 
-* Builds the sorted array one item at a time.
-* Takes each element and inserts it into the correct position in the already sorted part.
+* Build the sorted array one item at a time.
+* Take each element and insert it into the correct position in the already sorted part.
 * Best for nearly sorted arrays.
 * Time Complexity: **O(n²)** worst/average, **O(n)** best, Space: **O(1)**
 
@@ -47,8 +47,8 @@ Unsorted Array: `[29, 10, 14, 37, 14]`
 
 ### Concept
 
-* Repeatedly swaps adjacent elements if they are in the wrong order.
-* Pushes the largest unsorted element to the end in each pass.
+* Repeatedly swap adjacent elements if they are in the wrong order.
+* Push the largest unsorted element to the end in each pass.
 * Stable but inefficient for large lists.
 
 ### Example
@@ -69,8 +69,8 @@ Unsorted Array: `[29, 10, 14, 37, 14]`
 ### Concept
 
 * Divide and conquer strategy.
-* Recursively splits the array into halves, sorts and merges them.
-* Very efficient for large datasets.
+* Recursively split the array into halves, sort and merge them.
+* Very time-efficient for large datasets.
 
 ### Example (Step-wise)
 
@@ -93,7 +93,7 @@ Merge:
 ### Concept
 
 * Divide and conquer algorithm.
-* Selects a pivot, partitions the array such that elements less than pivot are on left, greater on right, then recursively sorts them.
+* Select a pivot, partition the array such that elements less than pivot are on left, greater on right, then recursively sort them.
 * Highly efficient for average cases.
 
 ### Example
